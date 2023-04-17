@@ -1,0 +1,44 @@
+Dans nodejs => créer des fichiers .js => module 
+
+=> 01-hello.js 
+=> 02-exo.js 
+
+=> ce sont des modules 
+
+=> javascript dans les navigateurs 
+=> le code js qui est écrit dans ces fichiers est local
+=> tout le code n'est disponible QUE dans la fichier 
+
+=> si je veux partage du code entre plusieurs fichiers 
+=> exécuté dans nodejs 
+
+=> import => export ( module ES ) => react native 
+=> par défaut cette manière de partager du codes entre les fichiers n'était pas disponible 
+
+=> nodejs.org
+
+
+=>https://nodejs.org/docs/latest-v18.x/api/fs.html#filehandlereadoptions
+
+=> ESM => Ecma Script Module (exactement la manière de créer des composants sur React Native)
+export 
+export default 
+
+import {} from "...."
+import * from "...."
+
+=> par défaut, ce n'est pas disponible dans NodeJS 
+
+=> CJS => Commun Javascript => c'est cette manière de créer des modules qui est disponible par défaut dans NodeJS 
+
+à la place d'écrire export 
+
+module.exports 
+
+à la place d'utiliser import 
+
+require("") => Synchrone => charge les fichiers un par un avant exécuter 
+
+=> à partir de la version 16 de NOdeJS on peut désormais utiliser soit l'un soit l'autre 
+
+=> require() => n'existe pas dans js pour les navigateurs web 

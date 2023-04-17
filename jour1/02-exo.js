@@ -52,3 +52,12 @@ semaine.forEach((item)=>{
 })
 console.log(semaine);
 */
+
+// window n'existe pas dans Node 
+// par contre on a des modules 
+// 3 types de modules => créer nous même 
+//                    => natif (intégré par défault dans Nodejs)
+//                    => téléchargé ( npm / npx )
+
+// => rdv 10h50 bon café !!!!!!!!!!!!
+
