@@ -32,7 +32,7 @@ console.log(window) ; // n'existe pas => déclenche une erreur fatale
 
 // ["lundi", "mardi", "mercredi "]
 
-// ajotuer à la fin de la variable le mot "jeudi"
+// ajouter à la fin de la variable le mot "jeudi"
 // pouvez transformer le tableau  ["lundi", "mardi", "mercredi ", "jeudi"]
 // pouvez transformer le tableau  ["LUNDI", "MARDI", "MERCREDI ", "JEUDI"]
 // afficher dans le terminal le tableau transformé 
