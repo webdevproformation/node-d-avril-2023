@@ -1,0 +1,115 @@
+créer un nouveau dossier sur votre ordinateur => node 
+dans ce dossier créer un sous dossier jour1 
+
+support de cours : 
+
+https://formation.webdevpro.net/nodejs
+login : nodejs
+password : nodejs 
+
+------------------------
+
+il y aura aussi un github pour les notes de cours 
+
+=> react native => utilisé nodejs sans s'en rendre compte =>
+=> plus particulièrement à nodejs => ??? 
+
+npx create-expo-app --template 
+npm run android 
+
+Présentation : 
+
+=> avec nodejs on peut créer logiciel 
+=> nodejs => créer des API => Application Program Interface 
+
+=> https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita
+=> se mettre du côté Back de l'application ()
+=> serveur avec nodejs 
+=> base de données (MongoDB) 
+
+=> React Native (client) => la partie qui est directement visible par les utilisateurs 
+
+=> NodeJS + MongoDB (serveur / Back) => la partie qui est en relation avec le client (React Native / un site internet)
+
+NodeJS a été créé en 2009 par Ryan Dahl 
+
+=> il voulait faire en sorte que Javascript puisse être exécuté HORS des navigateurs web 
+
+=> récupérer le moteur javascript de Chrome (V8) => entouré d'un code en C++ => 
+
+V8 + C++ => Node / NodeJS / Node.js (c'est la même chose )
+
+nodejs => front de votre application (client) et pour la partie back (serveur )
+=> 1 seul langage à connaitre => Javascript 
+=> créer des serveurs / générer des requêtes HTTP / communiquer avec une base de données 
+mongoDB utilise le format JSON pour stocker ses données 
+
+Concurrents de NodeJS 
+
+=> Bun
+=> Deno (Ryan Dahl) en 2018 
+
+await / async => n'est plus obligation d'entourée tes await avec des fonctions async 
+
+await .... => peu de temps 
+
+
+=> DOM => sélectionner une balise html => document.querySelector("h1").innerHTML = "...."
+Javascript de navigateur web 
+
+=> lorsque vous utilisez NodeJS => la variable window n'existe pas 
+=> manipulation du DOM n'existe pas par défaut dans NodeJS 
+
+=> par contre vous allez avoir de nombreuses fonctionnalités en + dans NodejS (qui n'existe pas dans la version web )
+
+=> fs (module de Nodejs) => File System => créer des fichiers sur votre ordinateur 
+=> os (module ) => démarrer des logiciels dans votre ordinateur 
+
+=> pour les utilisateurs de Windows => node 
+=> Linux / MacOS => sudo node 
+
+=> NodeJS => pas Framework / pas un logiciel ou un langage / pas librairie 
+=> NodeJS => runtime / environnement d'exécution (permet d'exécuter Javascript (hors des navigateurs))
+
+=> vérifier que nodejs est bien installé => 
+
+=> vérifier que nodejs est bien installé => node -v dans un terminal 
+
+v18.15.0
+
+node -v
+node --version 
+
+node -version // cette commande ne fonctionne pas ! 
+
+Attention aussi au shell / cmd / invite de commande / bash / terminal (l 'endrois où tu écris tes commandes )
+
+PATH => selon le shell dans lequel vous exécutez des commandes => chercher dans votre ordinateur des logiciels (binaires) à exécuter 
+
+en fonction du shell que vous utilisez 
+
+node
+C:\Program Files\nodejs\nodejs.exe 
+
+
+PATH qui dépend du terminal (là où le terminal va chercher les binaires (.exe) dans l'ordinateur )
+
+terminal (outil dans lequel tu écris des commandes )
+
+ligne où tu ecris => 3 parties (prompt)
+C:\Users\harri\Desktop\node    (où je suis dans l'ordinateur)
+>
+commande => node --version  // npx create-expo-app --template // PATH 
+
+commande 
+
+npm run android 
+node -version
+git init 
+
+=> binaire / exécutable (logiciel npm logiciel / node logiciel / git logiciel)
+=> binaire en ligne de commande 
+
+=> "C:\Program Files\nodejs\node.exe" --version
+
+=> 01-hello.js
