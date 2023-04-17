@@ -1,5 +1,7 @@
 const fs = require("fs");
+/* const exec = require("child_process")
 
+exec.exec("git init") */
 const html = `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,9 +37,18 @@ if(process.argv[3] == "true"  ){
         console.log("le fichier  script.js est bien créé")
     }) ; 
 }
-// cd ../projet
+// cd ../projet  => cd ..  puis cd projet 
 // node main.js nom-fichier.html 
 // => créer le fichier  nom-fichier.html 
 // node main.js nom-fichier.html true 
+// 0     1         2               3 
+// process.argv[3] => "true"
 // => créer le fichier  nom-fichier.html et les fichiers style.css et script.js
 // npx create-expo-app 
+
+// fs 
+// server => créer des serveurs => API 
+
+// https://www.npmjs.com/package/ftp
+
+// 13h36 bon appétit !!!!!
