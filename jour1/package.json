@@ -1,0 +1,28 @@
+{
+  "name": "jour1",
+  "version": "1.0.0",
+  "description": "découvrir node et npm",
+  "main": "01-hello.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/webdevproformation/node-d-avril-2023.git"
+  },
+  "keywords": [
+    "node",
+    "npm",
+    "javascript"
+  ],
+  "author": "Malik H",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/webdevproformation/node-d-avril-2023/issues"
+  },
+  "homepage": "https://github.com/webdevproformation/node-d-avril-2023#readme",
+  "dependencies": {
+    "lodash": "^4.17.21",
+    "moment": "^2.29.4"
+  }
+}
