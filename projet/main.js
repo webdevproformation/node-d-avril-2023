@@ -35,6 +35,9 @@ if(process.argv[3] == "true"  ){
         console.log("le fichier  script.js est bien créé")
     }) ; 
 }
-
-
+// cd ../projet
+// node main.js nom-fichier.html 
+// => créer le fichier  nom-fichier.html 
+// node main.js nom-fichier.html true 
+// => créer le fichier  nom-fichier.html et les fichiers style.css et script.js
 // npx create-expo-app 
