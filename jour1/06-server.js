@@ -45,3 +45,29 @@ serveur.listen( 4000 , "localhost" );
 // http://localhost:4000
 // http://localhost:4000/contact
 // http://localhost:4000/contact-2
+
+// stopper le serveur
+// cas pratique créer le fichier 07-exo.js 
+
+// ce fichier contient un serveur qui réponse aux requêtes suivantes 
+
+// "/"  => retourner du html récupérer le contenu du ficheir  07-exemple.html
+/* fs.readFile()
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>exo 7</p>
+</body>
+</html>
+*/ 
+
+// si vous appeler l'adresse /cocktails.json 
+// [{id : 1 , nom : "margarita" }, {id : 2 , nom : "Vodka citron"}] ;(en format json )
+
+// le serveur écoute sur le port 4001
