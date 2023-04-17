@@ -17,7 +17,8 @@ module.exports.test = () => {
     console.log("je suis le test");
 }
 
-/* module.exports = { // attention ça écrase les module.exports.a
+/* module.exports = { 
+    // attention ça écrase les module.exports
     test : test
 } */
 /* module.exports = {
