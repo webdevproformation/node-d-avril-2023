@@ -24,3 +24,5 @@ fs.writeFile("04-exemple.txt" , "bonjour !!!" ,  'utf8', function(){
 
 
 
+
+
