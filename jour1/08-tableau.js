@@ -39,3 +39,11 @@ if(_.isEmpty(texte)){
 if(_.isEmpty(etudiant)){
     console.log("etudiant vide")
 }
+
+// cas pratique 
+
+// créer un nouveau fichier 09-exo.js 
+
+// en uilisant la librairie lodash créer un tableau contenu 10 valeurs 
+// chaque valeur est un chiffre aléatoire entre 0 et 100 
+
