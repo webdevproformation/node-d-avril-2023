@@ -19,6 +19,38 @@ const serveur = express();
 //} })
 // node . 
 
+serveur.use(express.json()) // Middleware => traiter correctement les requetes http qui envoie du json 
+
+
+serveur.delete("/exo/:id", (request, reponse) => {
+    const id = request.params.id ;
+    // recherche pour trouver l'index 
+    const exoASupprimer = exos.find(function(exo){
+        return exo.id == id
+    })  
+    const index = exos.indexOf(exoASupprimer);
+    exos.splice(index, 1)
+    reponse.json({ message : `exo numéro ${id} supprimé` , error : null })
+})
+// DELETE http://localhost:4002/exo/1 => réponse ci dessus 
+// GET    http://localhost:4002/exo/all => [{},{}]
+
+serveur.post("/new-exo" , function(request, reponse){  // ajouter une nouvelle route POST
+    const exo = request.body ; 
+    exos.push(exo)
+    reponse.json({ message : "exo ajouté" , error : null }); 
+})
+// POST => /new-exo => "exo ajouté"
+// le POST est temporaire => stocké dans la RAM du serveur 
+// si vous faîtes un Ctrl + S (nodemon eteindre et restart le serveur => réinitaliser la valeur de exos )
+// GET =>  /exo/all => [{},{},{},{}]
+// package.json 
+// ajouter "dev" : "nodemon ." dans "script"
+// npm run dev => lancer la commande nodemon .
+// Base de données => mieux qu'un fichier texte
+// MongoDB
+
+
 serveur.get("/" , function(request, reponse){ // route
     reponse.send("bonjour les amis !"); 
 })
