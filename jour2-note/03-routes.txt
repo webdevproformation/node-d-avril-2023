@@ -7,3 +7,20 @@ http://localhost:4002/contact => html
 http://localhost:4002/etudiant/1
 http://localhost:4002/etudiant/2
 http://localhost:4002/etudiant/3
+
+cas pratique 
+créer une nouvelle route variable 
+
+http://localhost:4002/exo/js => afficher le l'article ayant nom js
+http://localhost:4002/exo/php => afficher le l'article ayant nom php
+http://localhost:4002/exo/node => => afficher le l'article ayant nom node
+http://localhost:4002/exo/all => afficher TOUS les articles 
+enfin http://localhost:4002/exo/react-native => un message d'erreur 404 
+
+dans cette route vous avez la collection suivante 
+
+[
+    { id : 1 , nom : "php" , sujet : "lorem ipsum" }
+    { id : 2 , nom : "js" , sujet : "lorem ipsum et le DOM" }
+    { id : 3 , nom : "node" , sujet : "lorem ipsum et npm" }
+]
