@@ -1,0 +1,22 @@
+créer un nouveau projet jour2-tp 
+dans ce projet vous allez installer package.json et télécharger express 
+
+créer une fichier app.js (point d'entrée de votre application)
+
+créer une autre fichier bdd.js 
+
+module.exports.articles = [
+    {   id : 1, 
+        titre : "article 1", 
+        contenu : "lorem ipsum" , 
+        commentaires : [
+            {id : 1 , auteur : "Alain" , message : "super article"}
+        ]
+    }
+]
+
+=> créer les méthodes pour créer / modifier / supprimer / récupérer les articles 
+pour l'article 1 (ou le 2 ou le 3) 
+=> créer les méthodes pour créer / modifier / supprimer / récupérer les commentaires 
+
+
