@@ -1,0 +1,16 @@
+// node index.js
+// node .
+// http://localhost:4002 => port qui est disponible (expérience)
+
+// 80 => Apache 
+// 3306 => MySQL
+// 22 => SSh 
+// 21 => FTP 
+// 27017 => MongoDB 
+
+// 1 => 26000
+
+// choix technologie pour créer un site internet (Wordpress => PHP )
+// historique (investi sur un site il y a 20 ans )
+
+// 11h05 bon café !!!!

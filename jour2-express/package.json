@@ -1,0 +1,16 @@
+{
+  "name": "jour2-express",
+  "version": "1.0.0",
+  "description": "découverte du package express pour créer des serveurs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev" : "nodemon ."
+  },
+  "keywords": [],
+  "author": "Malik H",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

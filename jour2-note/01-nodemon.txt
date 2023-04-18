@@ -1,0 +1,32 @@
+on vient de voir qu'ajouter de nouvelles routes avec express => simple 
+
+serveur.get("/", (req, rep) => {
+    // logique 
+    rep.send("")
+    rep.json("")
+})
+
+// stopper le serveur Ctrl + C 
+// restart 
+
+// module nodemon => détecter si votre code est modifié et va le redémarrer 
+
+// npm install -g nodemon
+// sudo npm install -g nodemon
+// installer de manière globale la librairie nodemon => vous pouvez utiliser nodemond SUR TOUS LES PROJETS dans votre ordinateur dès maintenant 
+
+// npm install express => installation locale => express n'est utilisable QUE dans le dossier jour2-express 
+// si vous avez un autre projet (dossier) dans lequel vous avez besoin d'express 
+// vous devez l'installer à nouveau 
+
+
+// PHP => composer 
+// Python => PIP 
+
+// autonomie
+// dossier  
+// lib 1
+// lib 2
+// lib 3
+
+npm update

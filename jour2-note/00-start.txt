@@ -37,3 +37,20 @@ npm install moment underscore => téléchargé la librairie / stocker dans le do
 
 
 => https://www.npmjs.com/ => https://www.npmjs.com/package/express
+
+=> crée un nouveau dossier jour2-express
+cd jour2-express
+npm init --yes
+npm init -y
+
+=> modifier le fichier package.json si nécessaire
+=> décision stratégique => ajouter la propriété "type" : "module" ,
+=> https://docs.npmjs.com/cli/v6/configuring-npm/package-json#description
+
+
+=> ajouter des dépendances depuis internet (npmjs.com)
+=> npm i express => package.json => dependencies => récursivement les télécharger (COMPATIBLES)
+=> NPM => Node Package Manager => fichier de description ET GEstionnaire de dépendances
+
+
+=> le dossier node_modules n'est pas partagé sur github => (le mettre dans .gitignore)

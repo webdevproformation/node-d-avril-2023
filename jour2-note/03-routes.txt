@@ -1,0 +1,9 @@
+http://localhost:4002/produits => json 
+http://localhost:4002/pause => html 
+http://localhost:4002/contact => html 
+
+
+// route variable 
+http://localhost:4002/etudiant/1
+http://localhost:4002/etudiant/2
+http://localhost:4002/etudiant/3
