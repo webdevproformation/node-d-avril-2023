@@ -1,0 +1,53 @@
+
+ajouter des routes dans notre fichier index.js 
+
+serveur.get("/" , function(){})
+serveur.get("/nom" , function(){})
+serveur.get("/toto/:id" , function(){})
+serveur.get("/article/:mois/:annee/:auteur" , function(){})
+
+
+Méthode http GET   
+Méthode http POST 
+Méthode http PUT PATCH
+Méthode http DELETE
+
+requete HTTP => GET 
+fetch("http://localhost:4002/nom")
+
+<form action="http://localhost:4002/nom" method="POST">
+</form>
+
+communique avec un serveur coté client (via fetch ou via votre nativageur)
+
+vous réalisez une requête http GET 
+
+CRUD (version dans le protocole HTTP)
+Méthode http GET => récupérer des informations   récupérer des informations stockées sur le serveur node 
+                    READ
+Méthode http POST 
+                => POST ajouter une nouvelle information dans le serveur (Create)
+Méthode http PUT PATCH
+                => modifier intégralement un enregistrement dans le serveur PUT (UPDATE)
+                => modifier partiellement un enregistrement dans le serveur PATCH (UPDATE)
+Méthode http DELETE
+                => supprimer un profil utilisateur / techno => DELETE 
+
+express peut distinguer facilement les différentes types de requêtes qui sont envoyées depuis un client 
+
+=> installé un logiciel Postman (logiciel)
+=> simuler un client facilement réaliser des requêtes http 
+=> logiciel la spécialité fetch()
+=> permet de créer un back (serveur / API) sans avoir à attendre que 
+=> le client (react native / site internet) soit prêt 
+
+=> extension => thunder client 
+
+=> présenter l'extension thunder client 
+=> https://www.youtube.com/watch?v=AbCTlemwZ1k
+
+=> https://www.postman.com/downloads/
+
+// rdv 13h40 !! bon appetit !!!
+
+react native factice => réaliser des demandes requêtes http 

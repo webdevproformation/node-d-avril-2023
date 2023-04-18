@@ -24,3 +24,21 @@ dans cette route vous avez la collection suivante
     { id : 2 , nom : "js" , sujet : "lorem ipsum et le DOM" }
     { id : 3 , nom : "node" , sujet : "lorem ipsum et npm" }
 ]
+
+
+serveur.get("/exo/:num",(request,reponse)=>{
+    const articles=[
+
+           { id : 1 , nom : "php" , sujet : "lorem ipsum" },
+           { id : 2 , nom : "js" , sujet : "lorem ipsum et le DOM" },
+           { id : 3 , nom : "node" , sujet : "lorem ipsum et npm" }
+    ];
+    const nom=request.params.num
+    const articleRechercher=articles.find(function(article){
+        return article.nom==nom   
+    });
+    if (!articleRechercher) return reponse.status(404).json({erreur:404, message:`article inconnu pour le nom ${nom}`})
+    if (nom === "all") return reponse.json(article)
+    reponse.json(articleRechercher)
+    // reponse.send(request.params.num)
+})

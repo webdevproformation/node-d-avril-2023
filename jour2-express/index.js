@@ -74,6 +74,11 @@ serveur.get("/exo/:techno", (request, reponse) => {
     })
     if(!exoRecherche) return reponse.status(404).json({error : 404 , message : `${techno} n'existe dans les exos`});
     reponse.json(exoRecherche); 
+
+    // code 400  => Bad Request 
+    // code 403  => Forbidden (pb d'authentification)
+    // code 404  => Not Found
+    // https://fr.wikipedia.org/wiki/Liste_des_codes_HTTP
 })
 
 
