@@ -35,6 +35,30 @@ serveur.delete("/exo/:id", (request, reponse) => {
 // DELETE http://localhost:4002/exo/1 => réponse ci dessus 
 // GET    http://localhost:4002/exo/all => [{},{}]
 
+serveur.put("/exo/:id", (request, reponse) => {
+    const id = request.params.id 
+    const exoModifie = request.body ;
+
+    const exoAMettreAJour = exos.find(function(exo){
+        return exo.id == id
+    }) 
+    const index = exos.indexOf(exoAMettreAJour);
+    exos[index].nom = exoModifie.nom
+    exos[index].sujet = exoModifie.sujet
+    reponse.json({ message : `exo numéro ${id} a été mis à jour` , error : null })
+})
+
+// PUT http://localhost:4002/exo/2 => réponse ci dessus 
+// dans le body du PUT
+/*
+{
+  "nom" : "titre modifié", 
+  "sujet" : "je fais un test sur la méthode PUT HTTP"
+}
+*/
+// GET http://localhost:4002/exo/all
+
+
 serveur.post("/new-exo" , function(request, reponse){  // ajouter une nouvelle route POST
     const exo = request.body ; 
     exos.push(exo)
