@@ -1,0 +1,39 @@
+support de cours : 
+
+https://formation.webdevpro.net/nodejs
+login : nodejs
+password : nodejs 
+
+------------------------
+
+il y aura aussi un github pour les notes de cours 
+
+https://github.com/webdevproformation/node-d-avril-2023
+
+node permet d'exécuter du code js côté machine 
+si vous connaissez js (base boucle / variable / fonction objet ....)
+en + Node a ajouté des modules natifs  qui permettent de réaliser des opérations sur l'ordinateur => créer des fichiers / lancer des processus  
+
+3 types de modules => 
+modules créés à la main 
+modules natifs => fs os http  => https://nodejs.org/dist/latest-v18.x/docs/api/
+module téléchargé  via le site https://www.npmjs.com/ et l'outil en ligne de commande npm 
+
+npm => Node Package Manager 
+
+npm init => créer un fichier package.json (décrire le projet : qui / version / script de test )
+         => DEPENDANCES projet pour fonctionner dépend de librairies 
+
+npm i <lib>     => 
+npm install moment underscore => téléchargé la librairie / stocker dans le dossier du projet (node_modules)
+                => ajouter un fichier package-lock.json (où sur internet npm à récupérer le ou les librairies)
+                => ajouter une propriété au fichier package.json dépendencies 
+
+=> moment underscore  librairie utilitaires => donne plein de fonctions qui n'existent pas en js 
+
+=> créer une API 
+=> donc il faut créer avec nodejs un serveur 
+=> vous avez une librairie => express qui permet de créer facilement et très complète sur serveur 
+
+
+=> https://www.npmjs.com/ => https://www.npmjs.com/package/express
