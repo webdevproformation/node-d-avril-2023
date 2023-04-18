@@ -11,9 +11,9 @@ http://localhost:4002/etudiant/3
 cas pratique 
 créer une nouvelle route variable 
 
-http://localhost:4002/exo/js => afficher le l'article ayant nom js
-http://localhost:4002/exo/php => afficher le l'article ayant nom php
-http://localhost:4002/exo/node => => afficher le l'article ayant nom node
+http://localhost:4002/exo/js => afficher l'article ayant nom js
+http://localhost:4002/exo/php => afficher l'article ayant nom php
+http://localhost:4002/exo/node => => afficher l'article ayant nom node
 http://localhost:4002/exo/all => afficher TOUS les articles 
 enfin http://localhost:4002/exo/react-native => un message d'erreur 404 
 
