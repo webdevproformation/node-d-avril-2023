@@ -1,0 +1,15 @@
+// stopper l'ancien serveur
+// cd ..
+// cd jour2-tp 
+// npm init --yes
+// npm i express
+// .gitignore
+// modifier le script dans package.json
+ "dev" : "nodemon ." => pas besoin de l'installer à nouveau car npm i -g nodemon 
+
+attention nodemon n'est pas stocké dans le dossier node_modules 
+=> dossier 
+npm view -g nodemon
+// C:\Users\harri\AppData\Roaming\npm\node_modules\nodemon
+
+// npm run dev
