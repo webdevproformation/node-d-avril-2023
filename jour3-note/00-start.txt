@@ -1,0 +1,40 @@
+support de cours : 
+
+https://formation.webdevpro.net/nodejs
+login : nodejs
+password : nodejs 
+
+------------------------
+
+il y aura aussi un github pour les notes de cours 
+
+https://github.com/webdevproformation/node-d-avril-2023
+
+
+Payant ou pas payant ?
+
+> 308 h (loi) => les stages sont PAYANT normalement 
+
+=> 420 h (60 jours ouvrés - 2 mois 3/4) ====> payant 
+
+------------------------
+
+2 solutions gratuites
+
+308 + 72 + reste => gratuit 
+
+210 h (ste 1) + 210 h (ste 2) => gratuite 
+
+------------------------
+
+=> type de contrat => CONVENTION tri parties 
+=> date de remise max de la CONVENTION (version electronique dispo sur MyCommunity du document + explication sur le process de validation)
+=> dès que possible réaliser le process 
+
+------------------------
+
+gratification : https://www.service-public.fr/particuliers/vosdroits/R40280
+
+------------------------
+
+contact : f.weill@doranco.fr

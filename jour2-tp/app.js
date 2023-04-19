@@ -66,6 +66,7 @@ serveur.get("/commentaire/:idArticle" , (request , reponse) => {
     const article = rechercheArticle(articles , idArticle)
     return reponse.json(article.commentaires)
 })
+
 serveur.post("/commentaire/:idArticle" , (request , reponse) => {
     const idArticle = request.params.idArticle ;
     const {body} = request
@@ -76,6 +77,8 @@ serveur.post("/commentaire/:idArticle" , (request , reponse) => {
     articles[index].commentaires.push(body)
     return reponse.json({msg : "insert commentaire ok"})
 });
+
+// joi // mongoose 
 
 serveur.put("/commentaire/:idArticle/:idCommentaire" , (request , reponse) => {
     const idArticle = request.params.idArticle ;
@@ -116,7 +119,6 @@ serveur.delete("/commentaire/:idArticle/:idCommentaire" , (request , reponse) =>
 
     return reponse.json({msg : "delete commentaire ok"})
 })
-
 
 
 serveur.listen(PORT , () => console.log(`le serveur express est start sur le port ${PORT}`))
