@@ -43,4 +43,12 @@ fetch("https://jsonplaceholder.typicode.com/users")
             console.log("fin fetch")
         })
 
-console.log("recupérer les clients" ,clients); 
+console.log("recupérer les clients" ,clients);
+
+//node 02-asynchrone.js
+
+// => comment faire en sorte que javascript executé le code dans l'ordre dans lequel je l'écris
+//  3 solutions 
+// callback (solution historique) 
+// new Promise ()
+// await et async avec des Promises  (ES6 de javascript => 2015)
