@@ -24,7 +24,7 @@ function insert(){
     const insert = new Etudiant(cdaEtudiant) // créer base IF NOT EXISTS et créer la table  IF NOT EXISTS et INSERER 
     insert.save(); // INSERT INTO en SQL
 }
-
+insert()
 
 // opération asynchrone => ... 
 async function supprimer(id){
@@ -44,13 +44,25 @@ read()
 async function update(id){ // UPDATE etudiant SET  nom = "Céline" , age = 40 WHERE id = "id"
             await Etudiant.findByIdAndUpdate(id , {
                 $set : {
-                    nom : "Céline",
-                    age : 40
+                    nom : "Zorro",
+                    age : 21
                 }
             })
 }
 
-update("643fb433d44231d2e54017a2")
+update("643fc180d3d120a9482a8fe1")
 
 // quel est la différence entre mongoose et mongodb 
 // => permettent de travailler avec un projet NODE <====> mongodb 
+
+
+// express + mongoose + joi + dotenv => projet => plus puissante ( PERSISTANCE )
+
+// Thunder => GET url {json} => node => express => serveur.get("url/:id", function(){
+    // []
+    // logique ?? => 404 
+    // OK réponse 
+    // fonction  que l'on vient de voir dans mongoose 
+    //[].find()
+    // Collection.findById(:id)
+//})
