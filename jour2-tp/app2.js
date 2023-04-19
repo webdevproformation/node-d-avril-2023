@@ -1,6 +1,4 @@
 const express = require("express")
-const { articles } = require("./bdd")
-const { rechercheArticle } = require("./lib")
 const PORT = 4003 ;
 
 const serveur = express();
@@ -9,12 +7,16 @@ const serveur = express();
 
 serveur.use(express.json()); // Attention au middleware
 
-/* serveur.get("/:id", (request, reponse) => {
+/* serveur.get("/read/:id", (request, reponse) => { // récupérer un article
     reponse.json({msg : "méthode 1"})
-}) */
+})  */
 
-serveur.get("/:id/:id2", (request, reponse) => {
-    reponse.json({msg : "méthode 2"})
+serveur.get("/read/:id/:id2?", (request, reponse) => { // récupérer le commentaire de l'article :id
+    const id = request.params.id
+    const id2 = request.params.id2
+    if(!id2) return reponse.json({msg : "méthode 1"}) // article 
+
+    reponse.json({msg : "méthode 2"}) // commentaire
 })
 
 
