@@ -1,0 +1,113 @@
+hier on a crée un tableau hors des routes 
+
+=> closure 
+=> en javascript 
+
+let a = 10 ; => petite base de données (RAM) => si le programme n'est redémarré 
+
+function route1(){
+    a += 2
+}
+
+function route2(){
+    a += 10
+}
+
+route2() // 20
+route2() // 30 
+route1() // 32
+
+console.log(a) // 32
+
+=> VRAIMENT PERSISTER les données => 
+=> fichier texte => writeFile 
+=> Base de données => NodeJS => il est possible de faire communiquer vos routes avec une base de données relationnelles SQlite / MySQL / PostGRE
+
+=> le plus naturel pour travailler avec NodeJS => MongoDB 
+=> Base de données NoSQL => stocker les données sous forme de JSON 
+
+SQLITE                       MongoDB
+Base de données        => Base de données 
+TABLE                  => Collection [{},{},{}]
+Ligne / Enregistrement => Document {  } => JSON
+
+=> je vous propose => créer une base de données MongoDB sur le cloud 
+
+=> MongoDB met disposition une version sur internet qui permet de pouvoir expériment MongoDB très facilement 
+=> MongoDB Atlas ( service cloud )
+
+=> https://www.mongodb.com/atlas
+=> texte 
+
+=> une fois que le compte utilisateur est créé => vous arrivez sur un site internet qui va vous permettre 
+
+=> GERER votre base de données 
+
+=> créer une base de données MongoDB 
+
+=> liens de connexion lier votre projet NODEJS avec la base de données 
+
+=> visualiser les données stockées dans la base / créer / supprimer / modifier des informations
+
+=> sécurité (pour établir la connexion )
+
+créer une base de données NOSQL => stockée sur PLUSIEURS serveurs (cluster => grappe)
+
+
+doranco
+q69fQqBwpDwx9uVw
+
+sécurité pour accéder à notre application
+0.0.0.0
+
+// rdv 10h57 bon café !!!!!!!!!!!!!!!!!!!!!!
+
+etape 1 => créer la base de données MongoDB 
+
+=> où / combien / nom 
+=> identifiant 
+=> ip d'accès 
+
+=> vide => 
+=> récupérer une adresse internet 
+=> que l'on va utiliser avec un projet Nodejs 
+
+// url => adresse internet qui permet de faire communiquer un projet NodeJS avec la base de données MongoDB à Paris
+
+mongodb+srv://doranco:<password>@cluster0.5ih2fl4.mongodb.net/?retryWrites=true&w=majority
+
+// gardé => utiliser dans peu de temps !
+mongodb+srv://doranco:q69fQqBwpDwx9uVw@cluster0.5ih2fl4.mongodb.net/demo?retryWrites=true&w=majority
+
+protocole mongodb 
+:// 
+login  : password 
+doranco:q69fQqBwpDwx9uVw
+
+@ 
+nom de la machine principale dans le cluster 
+cluster0.5ih2fl4.mongodb.net
+/
+
+demo => nom de notre base de données 
+
+droit 
+?retryWrites=true&w=majority
+
+
+// créer un nouveau dossier jour3-mongodb
+// set up du projet 
+cd jour3-mongodb
+npm init --yes
+npm i mongoose
+
+créer le fichier app.js 
+dans package.json 
+
+"main" : "app.js"
+"scripts" : { 
+    "test" : "...." ,
+    "dev" : "nodemon ."
+}
+
+npm run dev
