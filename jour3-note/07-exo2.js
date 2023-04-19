@@ -35,6 +35,11 @@ async function suite(){
 }
 
 suite()
-// rdv 15h37
+// rdv 15h40 !!
+// cd ../jour3-api
+// npm init --yes
+// npm i express mongoose joi dotenv
+// modifier package.json
+// npm run dev 
 
 // thunder client / express / mongoose (await async) MOngoDb / joi // dotenv  
