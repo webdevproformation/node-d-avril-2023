@@ -51,3 +51,6 @@ async function update(id){ // UPDATE etudiant SET  nom = "Céline" , age = 40 WH
 }
 
 update("643fb433d44231d2e54017a2")
+
+// quel est la différence entre mongoose et mongodb 
+// => permettent de travailler avec un projet NODE <====> mongodb 
