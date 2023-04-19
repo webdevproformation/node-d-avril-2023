@@ -26,7 +26,15 @@ const prendreUnCafe = () => new Promise( (resolve, reject)=>{
 async function todo(){
     await rangerChambre();
     await faireDuRepassage();
-    await prendreUnCafe();
+     await  prendreUnCafe();
+    //console.log("fin")
+}
+async function suite(){
+    await todo();
+    console.log("fin")
 }
 
-todo();
+suite()
+// rdv 15h37
+
+// thunder client / express / mongoose (await async) MOngoDb / joi // dotenv  
