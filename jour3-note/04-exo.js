@@ -12,13 +12,13 @@ function traitement2(cb){
     setTimeout(function(){
         a += 5 ;
         console.log("fin traitement2")
-        cb()
+        cb();
     } , 2000)
 }
 
 traitement1(() => {
     traitement2(() => {
-        console.log(a)
+        console.log(a) // callback hell => l'enfer du callback // Pyramid of DOOM 
     })
 })
 
