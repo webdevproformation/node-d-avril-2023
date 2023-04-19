@@ -22,5 +22,19 @@ traitement1(() => {
     })
 })
 
+/**
+let a = 0;
 
+function timers(callback){
+    setTimeout(function(){
+        a += 1;
+        setTimeout(function(){
+            a += 5;
+            callback()
+        }, 2000)
+    }, 1000)
+}
+
+timers(() => console.log(a))
+ */
 
