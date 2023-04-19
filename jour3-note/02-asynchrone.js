@@ -47,7 +47,7 @@ console.log("recupérer les clients" ,clients);
 
 //node 02-asynchrone.js
 
-// => comment faire en sorte que javascript executé le code dans l'ordre dans lequel je l'écris
+// => comment faire en sorte que javascript executé le code dans l'ordre dans lequel je l'écris ?
 //  3 solutions 
 // callback (solution historique) 
 // new Promise ()
