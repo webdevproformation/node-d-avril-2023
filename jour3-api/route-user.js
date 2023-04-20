@@ -5,6 +5,17 @@
 // (collection en NoSQL) (table en SQL) ===== model ??
 const { Router } = require("express")
 const { User } = require("./model") // import du model pour communiquer avec MongoDB 
+const Joi = require("joi")
+
+// créer un schéma Joi qui permet de vérifier que les données 
+// en POST sont conformes au schéma MongoDB
+const schemaJoiUser = Joi.object({
+    email : Joi.string().email({ tlds: { allow: false } }).required(),
+    password : Joi.string().regex(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/).required()
+})
+// on verifie que les données postées contiennent les champs email / password 
+// email => email valid 
+// password => texte qui contient  au minimun 8 caractères avec Majuscule / minuscule et chiffres
 
 const route = Router()
 
