@@ -6,6 +6,9 @@
 const { Router, response } = require("express")
 const { User } = require("./model") // import du model pour communiquer avec MongoDB 
 const { schemaJoiUser } = require("./verif") // import vérif
+const {genSalt , hash } = require("bcrypt"); 
+// importer fonction genSalt complexite à déhasher le mot depasse
+// hash => "azerty" => "13498498419cniydgduezvddzeugydbuzt"
 
 const route = Router()
 
@@ -27,7 +30,7 @@ route.post("/", async (request, reponse) => {
 
     // on doit vérifier si il n'existe pas un autre user
     // avec l'email proposé 
-    // vérifier si l'email propose n'est pas déjà en
+    // vérifier si l'email propose n'est pas déjà dans un autre Document 
     //User.find() // SELECT * FROM users
     const userRecherche = await User.find({email : body.email}) 
     // SELECT * FROM users WHERE email = body.email
@@ -40,6 +43,17 @@ route.post("/", async (request, reponse) => {
     // attention lorsque l'on stocker en base de données 
     // le password => il faut le hashé (crypter)
     // traitement hashage du password  
+    // NodeJS => module crypto => https://nodejs.org/dist/latest-v18.x/docs/api/crypto.html
+    // https://nodejs.org/dist/latest-v18.x/docs/api/crypto.html
+    // Chapitre "comprendre les modules" > chapitre 11 
+    // via un module depuis npmjs.org => bcrypt
+    // https://www.npmjs.com/package/bcrypt
+    // lancer un deuxieme terminal / cd jour3-api / npm i bcrypt
+    const salt = await genSalt(10)
+    const passwordHashe = await hash(body.password , salt)
+    // body.password => "Azazertyuiop1"
+    // passwordHashe => "$2b$10$Izn2qul7fgoAn0mjuEFIR.SywsFag.lcxekRbBaT6SH1Ex9nWIdAq"
+    return reponse.json(passwordHashe); 
 
     // ok
     const userACreer = new User(body) 
