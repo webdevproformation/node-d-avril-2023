@@ -87,7 +87,7 @@ route.get("/all" , async (request , reponse) => {
 
 // supprimer un profil user via son id 
 route.delete("/:id", async (request , reponse) => {
-    // récupérer de l'id dans l'url
+    // récupérer de l'id dans l'url // rdv 15h45 bon café !!!!!!!!!!!!!!!!!!!!!!!!
     const id = request.params.id ; 
     // vérifier que id est un id valid pour MongoDB 
     // si ko => erreur 400 Bad Request  STOP
@@ -103,6 +103,8 @@ route.delete("/:id", async (request , reponse) => {
     reponse.json({msg : `profil ${id} est supprimé`})
 })
 // test 
+// authentification ET l'autorisation ( middleware )
+// login => POST // jsonwebtoken ()
 
 
 module.exports = route ;  // route => export default 

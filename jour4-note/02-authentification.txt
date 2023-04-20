@@ -1,0 +1,36 @@
+quand vous êtes sur un site internet 
+
+page login 
+
+<form method="POST" action="http://localhost:4003/user/login">
+    <input type="text" name="email" placeholder="email">
+    <input type="password" name="password" placeholder="password"> Paris1234
+    <input type="submit">
+<form>
+
+=> rediriger vers une page d'accueil => présente ta liste d'emails 
+
+=> serveur route.post("/login" , function(request , reponse){
+
+    // vérifier que l'on a bien { email : ... , password : .... }
+
+    // stop => c'est pas bon  400
+
+    // est ce que il y a un profil utilisateur en base de donnée qui a un email transmis ?? ??
+
+    // stop => toto@yahoo.fr => stop 400
+
+    // est ce que le password écrit est valable comparer le mot passe // mot de pass hashé 
+
+    // stop => stop 400 
+
+    // si tout est ok 
+    // retourne => chaine caractère jsonwebtoken => clé public qui permet de vérifier 
+    // retourner à l'utilisateur "fiezhfiuoh.foiezhouizeh.dzoeihfozh"
+    // {  } clé / token => qui va être demandé par la suite pour pouvoir effectuer des traitements   
+
+    // message => bonjour monsieur x + token => 
+
+})
+
+// autorisation 
