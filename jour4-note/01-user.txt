@@ -1,0 +1,39 @@
+cas pratique 
+créer un nouveau model pour gérer des profils utilisateurs 
+
+1 créer un model qui permet de créer une table users dans MongoDB 
+
+que Document dans la collection (Table) users  contient 2 champs 
+email 
+password 
+
+2 créer une route qui permet de créer un profil user 
+
+POST http://localhost:4003/user 
+dans le body de la requête
+{
+    email : "a@yahoo.fr" ,
+    password : "123456"
+}
+
+Joi.string().email({ tlds: { allow: false } })
+Joi.string().regex(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/)
+
+=> String 
+
+/// arrive sur la screen 
+// GET 
+// useEffect( function(){ fetch().then().then((data) => setArticle(data) )  } , [])
+
+// article 
+// contenu 
+// like 
+// modifier fetch( , {method : "PUT"}) / supprimer fetch( , { method : "DELETE"})
+
+// article 
+// contenu 
+// like 
+
+// article 
+// contenu 
+// like 
