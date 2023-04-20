@@ -3,19 +3,9 @@
 // pour cette collection 
 
 // (collection en NoSQL) (table en SQL) ===== model ??
-const { Router } = require("express")
+const { Router, response } = require("express")
 const { User } = require("./model") // import du model pour communiquer avec MongoDB 
-const Joi = require("joi")
-
-// créer un schéma Joi qui permet de vérifier que les données 
-// en POST sont conformes au schéma MongoDB
-const schemaJoiUser = Joi.object({
-    email : Joi.string().email({ tlds: { allow: false } }).required(),
-    password : Joi.string().regex(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/).required()
-})
-// on verifie que les données postées contiennent les champs email / password 
-// email => email valid 
-// password => texte qui contient  au minimun 8 caractères avec Majuscule / minuscule et chiffres
+const { schemaJoiUser } = require("./verif") // import vérif
 
 const route = Router()
 
@@ -28,11 +18,24 @@ route.post("/", async (request, reponse) => {
     const {body} = request // récupérer la partie Body de la requête POST 
 
     // faire des vérifications email valide / password valid 
+    const {error} = schemaJoiUser.validate(body , {abortEarly : false})
+    // {abortEarly : false} => permet de dire à Joi => afficher toutes les erreurs trouvées
     // si ko => 400  bad Request 
+    if(error) return reponse.status(400).json(error.details)
+    // test oublie le password / mettre un password sans chiffre 
+    // POST http://localhost:4003/user 
 
     // on doit vérifier si il n'existe pas un autre user
     // avec l'email proposé 
     // vérifier si l'email propose n'est pas déjà en
+    //User.find() // SELECT * FROM users
+    const userRecherche = await User.find({email : body.email}) 
+    // SELECT * FROM users WHERE email = body.email
+
+    if(userRecherche.length > 0) return reponse.status(400).json({ msg : "email déjà pris" });
+    // si userRecherche = [{}] => l'email est déjà utilisé => stop erreur 400
+    // test POST http://localhost:4003/user 
+    // password valid et email : "a@yahoo.fr"
 
     // attention lorsque l'on stocker en base de données 
     // le password => il faut le hashé (crypter)
