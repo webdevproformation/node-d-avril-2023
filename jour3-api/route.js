@@ -61,5 +61,39 @@ route.delete("/:id" , async (request, reponse) => {
     reponse.json({ msg : `l'article ${id} est bien supprimé` }); 
 } )
 
+route.get("/:id", async (request , reponse) => {
+    const id = request.params.id ;
+    if(!isValidObjectId(id)) return reponse.status(400).json({msg : `l'id ${id} n'est pas valide pour MongoDB`})
+
+    //const articleRecherche = await Article.find({_id : id})
+    const articleRecherche = await Article.findById(id)
+
+    if(!articleRecherche) return reponse.status(404).json({ msg : `l'article ${id} n'existe pas` })
+
+    reponse.json(articleRecherche);
+})
+
+// put => update sur TOUS les champs de l'article titre / auteur / contenu
+// patch => update sur certains champs de l'article
+
+route.put("/:id" , async (request , reponse) => {
+    const id = request.params.id ;
+
+    if(!isValidObjectId(id)) return reponse.status(400).json({msg : `l'id ${id} n'est pas valide pour MongoDB`})
+    const { body } = request ;
+
+    const {error} = schemaArticleJoi.validate(body , { abortEarly : false})
+    if(error) return  reponse.status(400).json(error.details) // 400 Bad Request
+
+    // effectue l'update 
+    const articleUpdated = await Article.findByIdAndUpdate(id , { $set : body } , { new : true})
+    // { new : true} est facultatif => il permet de récupérer l'article avec les updates 
+    // sans cette valeur => findByIdAndUpdate retourne l'ancienne valeur de l'article mis à jour
+
+    if(!articleUpdated) return reponse.status(404).json({ msg : `l'article ${id} n'existe pas` }) ; 
+
+    reponse.json(articleUpdated)
+})
+
 
 module.exports = route ; 
