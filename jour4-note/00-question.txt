@@ -1,0 +1,61 @@
+Documentation
+
+https://joi.dev/api/
+
+format JSON (que l'encodage ) + formulaire dans lequel il y a une saisit => UTF8
+
+curl => https://stackoverflow.com/questions/12489530/how-do-i-post-form-data-with-utf-8-encoding-by-using-curl
+curl comme thunder client MAIS en ligne de commande
+
+=> https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify
+
+
+const settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "http://localhost:4003/",
+  "method": "POST",
+  "headers": {
+    "Accept": "*/*",
+    "User-Agent": "Thunder Client (https://www.thunderclient.com)",
+    "Content-Type": "application/json"
+  },
+  "processData": false,
+  "data": "{\n  \"titre\": \"troisième article\",\n  \"contenu\" : \"Bonjour les amis\",\n  \"like\" : 2 ,\n  \"auteur\" : \"Céline\"\n}"
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+
+-----------------
+
+let headersList = {
+ "Accept": "*/*",
+ "User-Agent": "Thunder Client (https://www.thunderclient.com)",
+ "Content-Type": "application/json"
+}
+
+let bodyContent = JSON.stringify({
+  "titre": "troisième article",
+  "contenu" : "Bonjour les amis",
+  "like" : 2 ,
+  "auteur" : "Céline"
+});
+
+let response = await fetch("http://localhost:4003", { 
+  method: "POST",
+  body: bodyContent,
+  headers: headersList
+});
+
+let data = await response.text();
+console.log(data);
+
+
+cas pratique 
+ajouter dans le fichier route.js 
+une route permettant de supprimer un article existant 
+une route permettant d'afficher la liste de toutes les articles existants 
+
+fetch("http://localhost:4002" , {method :"POST"})
