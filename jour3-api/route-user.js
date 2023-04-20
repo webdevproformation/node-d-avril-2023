@@ -9,6 +9,7 @@ const { schemaJoiUser } = require("./verif") // import vérif
 const {genSalt , hash } = require("bcrypt"); 
 // importer fonction genSalt complexite à déhasher le mot depasse
 // hash => "azerty" => "13498498419cniydgduezvddzeugydbuzt"
+const { isValidObjectId } = require("mongoose")
 
 const route = Router()
 
@@ -75,6 +76,33 @@ route.post("/", async (request, reponse) => {
     "password" : "123456"
 }
 */
+
+// question récupérer tous les profils users de collection users (email et _id)
+route.get("/all" , async (request , reponse) => {
+    const allUsers = await User.find({}).select({ _id : 1 , email : 1})
+    // SELECT _id , email FROM users 
+    reponse.json(allUsers); 
+})
+// GET http://localhost:4003/user/all
+
+// supprimer un profil user via son id 
+route.delete("/:id", async (request , reponse) => {
+    // récupérer de l'id dans l'url
+    const id = request.params.id ; 
+    // vérifier que id est un id valid pour MongoDB 
+    // si ko => erreur 400 Bad Request  STOP
+    // pour vérifier que id est valid => fonction de mongoose => isValidObjectId 
+    // pour l'utiliser il faut au préalable l'importer au début du fichier 
+    if(!isValidObjectId(id)) return reponse.status(400).json({msg : `id ${id} est invalide`})
+    // si ok on continue 
+    // lancer la suppression 
+    const profilASupprimer = await User.findByIdAndRemove(id)
+    // si ko => erreur 404 Profil introuvable avec l'id mentionné STOP 
+    if(!profilASupprimer) return reponse.status(404).json({msg : `Profil introuvable avec l'id mentionné : ${id}`})
+    // si ok => message "profil supprimé" STOP 
+    reponse.json({msg : `profil ${id} est supprimé`})
+})
+// test 
 
 
 module.exports = route ;  // route => export default 

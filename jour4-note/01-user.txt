@@ -39,5 +39,7 @@ Joi.string().regex(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/)
 // like 
 
 // cas pratique : dans le fichier route-user.js 
-// créer une nouvelle route permettant de supprimer un profil utilisateur via son id 
-// créer une nouvelle route permettant de récupérer tous les profils utilisateurs sans le password (uniquement email et _id )
+// créer une nouvelle route permettant de supprimer un profil utilisateur via son id  DELETE 
+// créer une nouvelle route permettant de récupérer tous les profils utilisateurs sans le password (uniquement email et _id ) GET 
+
+PUT mis à jour !! 
