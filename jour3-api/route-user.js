@@ -53,17 +53,16 @@ route.post("/", async (request, reponse) => {
     const passwordHashe = await hash(body.password , salt)
     // body.password => "Azazertyuiop1"
     // passwordHashe => "$2b$10$Izn2qul7fgoAn0mjuEFIR.SywsFag.lcxekRbBaT6SH1Ex9nWIdAq"
-    return reponse.json(passwordHashe); 
 
     // ok
-    const userACreer = new User(body) 
+    const userACreer = new User({ email : body.email , password : passwordHashe }) 
     // new mot clé de js => User (class model) => objet userACreer
     // objet userACreer dispose de la méthode .save() => INSERT 
     await userACreer.save() // INSERT => asynchrone (prendre du temps await )
                         // si await il faut ajouter un async devant le callback 
 
     // quelquesoit la route / quelquesoit la méthode => reponse OBLIGATOIREMENT 
-    reponse.json(userACreer) // affiché dans Thunder client 
+    reponse.json({msg : "profil user créé"}) // affiché dans Thunder client 
                              // status 200 => tout a été traité correctement par NodeJS
 
     // rdv 13h40 bon appetit !!! 
