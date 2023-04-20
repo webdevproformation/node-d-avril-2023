@@ -1,5 +1,6 @@
 const { Router } = require("express")
 const { Article } = require("./model")
+const { isValidObjectId } = require("mongoose")
 const Joi = require("joi"); // librairie qui permet de réaliser des vérifications super if 
 
 const schemaArticleJoi = Joi.object({ // 19 vérifications 
@@ -51,11 +52,13 @@ route.get("/all", async (request, reponse) => {
 route.delete("/:id" , async (request, reponse) => {
     const id = request.params.id
 
-    const reponseMongo = await Article.findByIdAndRemove(id) 
+    if(!isValidObjectId(id)) return reponse.status(400).json({msg : `l'id ${id} n'est pas valide pour MongoDB`})
+
+    const reponseMongo = await Article.findByIdAndRemove(id) // DELETE 
 
     if(!reponseMongo) return reponse.status(404).json({ msg : `l'article ${id} n'existe pas` })
 
-    reponse.json(reponseMongo); 
+    reponse.json({ msg : `l'article ${id} est bien supprimé` }); 
 } )
 
 

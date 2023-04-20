@@ -59,3 +59,11 @@ une route permettant de supprimer un article existant
 une route permettant d'afficher la liste de toutes les articles existants 
 
 fetch("http://localhost:4002" , {method :"POST"})
+
+
+Cas pratique 
+ajouter dans le fichier route.js  2 nouvelles routes 
+une route permettant de mettre à jour un article existant 
+une route permettant de récupérer 1 seul article 
+
+// rdv 10h48 café !! 
