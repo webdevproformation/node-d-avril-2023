@@ -10,6 +10,15 @@ const schemaJoiUser = Joi.object({
 // email => email valid 
 // password => texte qui contient  au minimun 8 caractères avec Majuscule / minuscule et chiffres
 
+
+const schemaArticleJoi = Joi.object({ // 19 vérifications 
+    titre : Joi.string().min(5).max(255).required(),
+    contenu : Joi.string().min(5).max(10000).required(),
+    like : Joi.number().min(0).required(),
+    auteur : Joi.string().min(5).max(255).required(),
+})
+
 module.exports.schemaJoiUser = schemaJoiUser ;
+module.exports.schemaArticleJoi = schemaArticleJoi ;
 
 // sorte les verifications => require dans le fichier route-user.js 
