@@ -39,7 +39,7 @@ route.post("/login" , async (request , reponse) => {
         email : utilisateurRecherche.email
     }
 
-    const token = JWT.sign(profilSansMotPass , "clé secrete");
+    const token = JWT.sign(profilSansMotPass , process.env.CLE_PRIVEE_JWT);
 
     reponse.json( {msg : "bienvenu " , token : token} ) // authentification => qui  ?
                                                         // autorisation => qu'est ce que l'on peut faire ?
