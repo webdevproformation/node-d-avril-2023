@@ -1,0 +1,61 @@
+
+SQL TABLE 
+
+user 
+id / email / password / role
+cle primaire 
+
+articles 
+id / titre / contenu / user_id 
+cle primaire            clé secondaire / clé etrangère 
+
+
+-----------------------------
+
+MongoDB 
+
+
+solution relationnelle
+{
+    _id : 
+    titre : 
+    contenu 
+    auteur => _id
+}
+solution imbriquée
+
+{
+    _id : 
+    titre : 
+    contenu 
+    auteur => { // attention le fait de copier le profil user 
+            _id : 
+            email 
+            password : 
+            role 
+        }
+}
+
+// solution hybride : imbriquée (peu updatable) / relationnelle
+{
+    _id : 
+    titre : 
+    contenu 
+    auteur => {  
+            _id : 
+            email :
+            role : 
+        }
+}
+
+=> duplication d'informations (pour le stockage) 
+=> TEMPS réponse BEAUCOUP plus rapide (1 seule collection qui 
+sollicité)
+=> 
+
+{
+    _id : 
+    email 
+    password : 
+    role 
+}

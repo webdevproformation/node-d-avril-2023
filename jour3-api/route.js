@@ -12,9 +12,11 @@ route.get("/", function(request, reponse){
     reponse.json({msg : "fonction"})
 })
 // route.post("/" , function(request, reponse){})
-route.post("/" , isValidArticle ,  async function(request, reponse){
+route.post("/" , [autorisation , isValidArticle] ,  async function(request, reponse){
     const { body } = request; 
-    const newArticle = new Article(body) // exos.push(body)
+    const userId = request.user._id ;
+    //return reponse.json(userId)
+    const newArticle = new Article({...body , auteur : userId}) // exos.push(body)
     await newArticle.save() // MongoDB => traitements qui sont asynchrones  => await 
     reponse.json(newArticle); 
 })
