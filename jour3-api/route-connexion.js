@@ -1,5 +1,5 @@
 const { Router } = require("express")
-const { schemaJoiUser } = require("./verif")
+const { schemaLogin } = require("./verif")
 const { User } = require("./model")
 const { compare } = require("bcrypt")
 const JWT = require("jsonwebtoken")
@@ -12,7 +12,7 @@ route.post("/login" , async (request , reponse) => {
 
     // vérifier que l'on a bien { email : ... , password : .... }
     // stop => c'est pas bon  400
-    const {error} = schemaJoiUser.validate(body , {abortEarly : false})
+    const {error} = schemaLogin.validate(body , {abortEarly : false})
     if(error) return reponse.status(400).json(error.details);
 
     // est ce que il y a un profil utilisateur en base de donnée qui a un email transmis ?? ??
