@@ -1,6 +1,7 @@
 // vous venez de créer 2 fonctions middleware 
 const { isValidObjectId } = require("mongoose")
 const { schemaArticleJoi } = require("./verif")
+const JWT = require("jsonwebtoken")
 
 function traitement1(request, reponse , next){
     console.log("je réalise le traitement 1")
@@ -37,9 +38,32 @@ function isValidArticle(request , reponse, next){
     next();
 }
 
+function autorisation (request , reponse, next){
+
+    // récupérer une information envoyée dans les header de la requete http 
+    const token = request.header("x-token")
+    // si elle est absente => erreur 401 // Unauthorized
+    if(!token) return reponse.status(401).json({msg : "vous devez avoir un token JWT pour réaliser cette opération"})
+
+    // si elle est présente mais qui a un problème => problème dans la signature (3ème partie) 
+    try{
+        const verif = JWT.verify(token , process.env.CLE_PRIVEE_JWT)
+        console.log(verif); 
+        // si tout ok => passer à la suite 
+        next();
+    }
+    catch(ex){
+        // 400 => Bad Request 
+        reponse.status(400).json({msg : "JWT invalid"})
+    }
+    
+}
+
+
 module.exports.traitement1 = traitement1
 module.exports.traitement2 = traitement2
 module.exports.idValid = idValid
 module.exports.isValidArticle = isValidArticle
+module.exports.autorisation = autorisation
 
 // 10h50 bon café !!!!!!!!!!!!!

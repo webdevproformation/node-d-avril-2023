@@ -13,7 +13,8 @@ const Article = model("articles", articleSchema) ;
 // les champs des Documents dans la collection 
 const userSchema = new Schema({
     email : String ,  // 123@yahoo.fr
-    password : String
+    password : String ,
+    role : { type : String , enum : ['redacteur' , 'admin'] }
 })
 
 // création du model => class qui va nous permettre .find() .findByIdAndUpdate()

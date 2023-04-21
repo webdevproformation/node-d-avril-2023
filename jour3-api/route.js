@@ -1,7 +1,7 @@
 const { Router } = require("express")
 const { Article } = require("./model") 
 
-const {traitement1 , traitement2 , idValid , isValidArticle } = require("./middleware")
+const {traitement1 , traitement2 , idValid , isValidArticle , autorisation } = require("./middleware")
 
 const route = Router();
 // fetch("http://localhost:4003", {method: "GET"})=> récupérer du serveur
@@ -40,7 +40,7 @@ route.get("/all" , async (request, reponse) => {
 // ajouter 2 middleware pour le DELETE
 // attention l'ordre des middlewares 
 // facile d'intercaler de nouveaux traitements dans une route existante => middleware 
-route.delete("/:id" , idValid ,  async (request, reponse) => {
+route.delete("/:id" , [autorisation , idValid] ,  async (request, reponse) => {
     const id = request.params.id ;
     const reponseMongo = await Article.findByIdAndRemove(id) // DELETE 
 
@@ -63,7 +63,7 @@ route.get("/:id", idValid , async (request , reponse) => {
 // put => update sur TOUS les champs de l'article titre / auteur / contenu
 // patch => update sur certains champs de l'article
 
-route.put("/:id" , [idValid, isValidArticle ] , async (request , reponse) => {
+route.put("/:id" , [ idValid, isValidArticle ] , async (request , reponse) => {
     const id = request.params.id ;
     const { body } = request ;
     // effectue l'update 

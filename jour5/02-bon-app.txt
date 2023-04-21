@@ -1,0 +1,32 @@
+rdv 14h00 bon appétit !!!!!!!!!!!!!!!!!!!
+
+
+middleware
+ajouter un traitement dans une route 
+request effectuer des tests => ko => stopper return reponse.status(404).json({msg : "..."})
+                            => ok => next()
+
+vous pouvez enchainer les middlewares dans votre route 
+
+
+route.post("/:id" , [traitement1, traitement2, traitement3] , function(request, reponse){})
+
+d'ajouter des traitements complémentaires sur des routes existantes 
+
+vérification
+autorisation 
+email 
+écrire en base de données des infos dans certains cas
+ .... 
+
+modifier sans impacter le code existant 
+=> pratique => à l'aise avec cette nouvelle technologie 
+
+=> juste vérifié que la personne dispose d'un compte 
+=> en + d'avoir un compte + => role "admin" ACL  => Access Control List ( Linux )
+=> https://fr.wikipedia.org/wiki/Access_Control_List
+
+role => 
+
+
+
