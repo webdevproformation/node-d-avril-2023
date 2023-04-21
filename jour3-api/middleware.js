@@ -47,8 +47,8 @@ function autorisation (request , reponse, next){
 
     // si elle est présente mais qui a un problème => problème dans la signature (3ème partie) 
     try{
-        const verif = JWT.verify(token , process.env.CLE_PRIVEE_JWT)
-        console.log(verif); 
+        const payload = JWT.verify(token , process.env.CLE_PRIVEE_JWT)
+        request.user = payload // permet d'envoyé le payload de notre JWT vers un autre middleware
         // si tout ok => passer à la suite 
         next();
     }
@@ -56,7 +56,11 @@ function autorisation (request , reponse, next){
         // 400 => Bad Request 
         reponse.status(400).json({msg : "JWT invalid"})
     }
-    
+}
+
+function isAdmin(request, reponse , next){
+    if(request.user.role !== "admin") return reponse.status(403).json({msg : "vous n'avez les droits pour effectuer cette action"})
+    next()
 }
 
 
@@ -65,5 +69,7 @@ module.exports.traitement2 = traitement2
 module.exports.idValid = idValid
 module.exports.isValidArticle = isValidArticle
 module.exports.autorisation = autorisation
+module.exports.isAdmin = isAdmin
+
 
 // 10h50 bon café !!!!!!!!!!!!!
