@@ -56,7 +56,8 @@ route.post("/", async (request, reponse) => {
     // passwordHashe => "$2b$10$Izn2qul7fgoAn0mjuEFIR.SywsFag.lcxekRbBaT6SH1Ex9nWIdAq"
 
     // ok
-    const userACreer = new User({ email : body.email , password : passwordHashe }) 
+    //const userACreer = new User({ email : body.email , password : passwordHashe , role : body.role }) 
+    const userACreer = new User({ ...body , password : passwordHashe }) // clonage et spread operator 
     // new mot clé de js => User (class model) => objet userACreer
     // objet userACreer dispose de la méthode .save() => INSERT 
     await userACreer.save() // INSERT => asynchrone (prendre du temps await )
@@ -79,7 +80,7 @@ route.post("/", async (request, reponse) => {
 
 // question récupérer tous les profils users de collection users (email et _id)
 route.get("/all" , async (request , reponse) => {
-    const allUsers = await User.find({}).select({ _id : 1 , email : 1})
+    const allUsers = await User.find({}).select({ _id : 1 , email : 1 , role : 1})
     // SELECT _id , email FROM users 
     reponse.json(allUsers); 
 })

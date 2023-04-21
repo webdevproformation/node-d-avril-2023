@@ -4,7 +4,8 @@ const Joi = require("joi")
 // en POST sont conformes au schéma MongoDB
 const schemaJoiUser = Joi.object({
     email : Joi.string().email({ tlds: { allow: false } }).required(),
-    password : Joi.string().regex(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/).required()
+    password : Joi.string().regex(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/).required(),
+    role : Joi.string().valid("redacteur","admin").required()
 });
 // on verifie que les données postées contiennent les champs email / password 
 // email => email valid 

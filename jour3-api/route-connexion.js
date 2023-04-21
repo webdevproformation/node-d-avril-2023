@@ -36,7 +36,8 @@ route.post("/login" , async (request , reponse) => {
 
     const profilSansMotPass = {
         _id : utilisateurRecherche._id ,
-        email : utilisateurRecherche.email
+        email : utilisateurRecherche.email , 
+        role : utilisateurRecherche.role ? utilisateurRecherche.role : "redacteur"
     }
 
     const token = JWT.sign(profilSansMotPass , process.env.CLE_PRIVEE_JWT);
